@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <IsPackable>true</IsPackable>
+    <BlazorLinkOnBuild>false</BlazorLinkOnBuild>
+    <LangVersion>7.3</LangVersion>
+    <PackageId>BlazorSorting</PackageId>
+    <Authors>villainoustourist</Authors>
+    <Product>BlazorSorting</Product>
+    <PackageProjectUrl>https://github.com/villainoustourist/BlazorSorting/</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/villainoustourist/BlazorSorting/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageTags>blazor aspnetcore component bootstrap4 sorting</PackageTags>
+    <Description>A reusable sorting component for Blazor.</Description>
+    <RepositoryUrl>https://github.com/villainoustourist/BlazorSorting/</RepositoryUrl>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <AssemblyName>BlazorSorting</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Browser" Version="0.7.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="0.7.0" />
+  </ItemGroup>
+</Project>

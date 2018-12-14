@@ -1,0 +1,36 @@
+@using BlazorSorting
+<a style="cursor: pointer;" onclick="@(async () => await InvokeSortFunction(Sort))">
+    @(DisplayText ?? Sort)
+    @if (S.SortBy == Sort)
+    {
+        if (S.Direction == Direction.Ascending)
+        {
+            <i class="fa fa-fw fa-sort-up text-dark"></i>
+        }
+        else
+        {
+            <i class="fa fa-fw fa-sort-down text-dark"></i>
+        }
+    }
+    else
+    {
+        <i class="fa fa-fw fa-sort text-light"></i>
+    }
+</a>
+
+@functions {
+
+[Parameter]
+Parameters S { get; set; }
+
+[Parameter]
+Func<string, Task> OnSort { get; set; }
+
+[Parameter]
+string DisplayText { get; set; } = "";
+
+[Parameter]
+string Sort { get; set; } = "";
+
+private async Task InvokeSortFunction(string s) => await OnSort?.Invoke(s);
+}
