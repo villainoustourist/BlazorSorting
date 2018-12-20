@@ -8,10 +8,11 @@
     <PackageId>BlazorSorting</PackageId>
     <Authors>villainoustourist</Authors>
     <Product>BlazorSorting</Product>
+    <Title>Sorting component for .NET Core Blazor</Title>
     <PackageProjectUrl>https://github.com/villainoustourist/BlazorSorting/</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/villainoustourist/BlazorSorting/blob/master/LICENSE</PackageLicenseUrl>
     <PackageTags>blazor aspnetcore component bootstrap4 sorting</PackageTags>
-    <Description>A reusable sorting component for Blazor.</Description>
+    <Description>A reusable Blazor component for generating sorting links and parameters for tabluar data.</Description>
     <RepositoryUrl>https://github.com/villainoustourist/BlazorSorting/</RepositoryUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <AssemblyName>BlazorSorting</AssemblyName>
