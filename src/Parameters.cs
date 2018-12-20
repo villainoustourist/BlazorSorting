@@ -16,6 +16,8 @@
 
         public string SortBy { get; set; }
 
+        public string Filter { get; set; }
+
         public int CurrentPage { get; set; }
 
         public void SetSortBy(string value)
