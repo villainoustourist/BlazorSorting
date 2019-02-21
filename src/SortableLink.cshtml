@@ -1,6 +1,6 @@
 @using BlazorSorting
 <a style="cursor: pointer;" onclick="@(async () => await InvokeSortFunction(Sort))">
-    @(DisplayText ?? Sort)
+    @( (string.IsNullOrEmpty(DisplayText) ? Sort : DisplayText ) )
     @if (S.SortBy == Sort)
     {
         if (S.Direction == Direction.Ascending)
@@ -27,10 +27,10 @@ Parameters S { get; set; }
 Func<string, Task> OnSort { get; set; }
 
 [Parameter]
-string DisplayText { get; set; } = "";
+string DisplayText { get; set; } 
 
 [Parameter]
-string Sort { get; set; } = "";
+string Sort { get; set; } 
 
 private async Task InvokeSortFunction(string s) => await OnSort?.Invoke(s);
 }
