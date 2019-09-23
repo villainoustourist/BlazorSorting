@@ -1,5 +1,5 @@
 @using BlazorSorting
-<a style="cursor: pointer;" onclick="@(async () => await InvokeSortFunction(Sort))">
+<a style="cursor: pointer;" onclick="async () => await InvokeSortFunction(Sort)">
     @( (string.IsNullOrEmpty(DisplayText) ? Sort : DisplayText ) )
     @if (S.SortBy == Sort)
     {
@@ -18,19 +18,19 @@
     }
 </a>
 
-@functions {
+@code {
 
 [Parameter]
-Parameters S { get; set; }
+public Parameters S { get; set; }
 
 [Parameter]
-Func<string, Task> OnSort { get; set; }
+public Func<string, Task> OnSort { get; set; }
 
 [Parameter]
-string DisplayText { get; set; } 
+public string DisplayText { get; set; } 
 
 [Parameter]
-string Sort { get; set; } 
+public string Sort { get; set; } 
 
 private async Task InvokeSortFunction(string s) => await OnSort?.Invoke(s);
 }
