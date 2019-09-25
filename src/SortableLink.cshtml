@@ -1,5 +1,8 @@
+@using System
+@using System.Threading.Tasks
 @using BlazorSorting
-<a style="cursor: pointer;" onclick="async () => await InvokeSortFunction(Sort)">
+@using Microsoft.AspNetCore.Components
+<a style="cursor: pointer;" @onclick="async () => await InvokeSortFunction(Sort)">
     @( (string.IsNullOrEmpty(DisplayText) ? Sort : DisplayText ) )
     @if (S.SortBy == Sort)
     {
@@ -20,17 +23,10 @@
 
 @code {
 
-[Parameter]
-public Parameters S { get; set; }
-
-[Parameter]
-public Func<string, Task> OnSort { get; set; }
-
-[Parameter]
-public string DisplayText { get; set; } 
-
-[Parameter]
-public string Sort { get; set; } 
+[Parameter] public Parameters S { get; set; }
+[Parameter] public Func<string, Task> OnSort { get; set; }
+[Parameter] public string DisplayText { get; set; } 
+[Parameter] public string Sort { get; set; } 
 
 private async Task InvokeSortFunction(string s) => await OnSort?.Invoke(s);
 }
