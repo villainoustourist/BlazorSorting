@@ -1,0 +1,30 @@
+@using System
+@using System.Threading.Tasks
+@using BlazorSorting
+@using Microsoft.AspNetCore.Components
+<a style="cursor: pointer;" @onclick="@( () => InvokeSortFunction(Sort) )">
+    @((string.IsNullOrEmpty(DisplayText) ? Sort : DisplayText))
+    @if (S.SortBy == Sort)
+    {
+        if (S.Direction == Direction.Ascending)
+        {
+            <i class="fa fa-fw fa-sort-up text-dark"></i>
+        }
+        else
+        {
+            <i class="fa fa-fw fa-sort-down text-dark"></i>
+        }
+    }
+    else
+    {
+        <i class="fa fa-fw fa-sort text-light"></i>
+    }
+</a>
+
+@code {
+    [Parameter] public Parameters S { get; set; }
+    [Parameter] public Func<string, Task> OnSort { get; set; }
+    [Parameter] public string DisplayText { get; set; }
+    [Parameter] public string Sort { get; set; }
+    private void InvokeSortFunction(string s) => OnSort?.Invoke(s);
+}
