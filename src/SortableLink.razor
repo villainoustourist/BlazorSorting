@@ -2,9 +2,9 @@
 @using System.Threading.Tasks
 @using BlazorSorting
 @using Microsoft.AspNetCore.Components
-<a style="cursor: pointer;" @onclick="@( () => InvokeSortFunction(Sort) )">
-    @((string.IsNullOrEmpty(DisplayText) ? Sort : DisplayText))
-    @if (S.SortBy == Sort)
+<a style="cursor: pointer;" @onclick="() => OnSorting(ColumnName)">
+    @((string.IsNullOrEmpty(DisplayText) ? ColumnName : DisplayText))
+    @if (S.SortBy == ColumnName)
     {
         if (S.Direction == Direction.Ascending)
         {
@@ -23,8 +23,13 @@
 
 @code {
     [Parameter] public Parameters S { get; set; }
-    [Parameter] public Func<string, Task> OnSort { get; set; }
+    [Parameter] public Func<string, Task> OnSort { get; set; } = null;
     [Parameter] public string DisplayText { get; set; }
-    [Parameter] public string Sort { get; set; }
-    private void InvokeSortFunction(string s) => OnSort?.Invoke(s);
+    [Parameter] public string ColumnName { get; set; }
+
+    private void OnSorting(string s)
+    {
+        OnSort?.Invoke(s);
+    }
+
 }
