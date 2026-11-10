@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <RazorLangVersion>3.0</RazorLangVersion>
+    <TargetFramework>net10.0</TargetFramework>
     <IsPackable>true</IsPackable>
     
     <PackageId>BlazorSorting</PackageId>
@@ -9,7 +8,7 @@
     <Product>BlazorSorting</Product>
     <Title>Sorting component for .NET Core Blazor</Title>
     <PackageProjectUrl>https://github.com/villainoustourist/BlazorSorting/</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/villainoustourist/BlazorSorting/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>blazor aspnetcore component bootstrap4 sorting</PackageTags>
     <Description>A reusable Blazor component for generating sorting links and parameters for tabluar data.</Description>
     <RepositoryUrl>https://github.com/villainoustourist/BlazorSorting/</RepositoryUrl>
@@ -18,7 +17,7 @@
 
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="10.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.0.14" />
   </ItemGroup>
 </Project>
