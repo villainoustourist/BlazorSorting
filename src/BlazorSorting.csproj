@@ -4,6 +4,7 @@
     <IsPackable>true</IsPackable>
     
     <PackageId>BlazorSorting</PackageId>
+    <Version>0.3.0</Version>
     <Authors>villainoustourist</Authors>
     <Product>BlazorSorting</Product>
     <Title>Sorting component for .NET Core Blazor</Title>
